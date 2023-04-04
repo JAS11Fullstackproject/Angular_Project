@@ -1,0 +1,361 @@
+<div>
+    <br>
+        <div class='row'>
+            <div class=''>
+                <div class='card-body'>
+                    <h3 class='form-lable'> Enter Personal Details Here!!</h3><br>
+                    <form class=""
+                    action=""
+                    #f="ngForm"
+                    novalidate
+                    (ngSubmit)="f.form.valid&&onSubmit(f)">
+
+                        <form id="form">
+                            <form action="Job_App" id="app" name="[ ]">
+                                <div class="row">
+                                <div class="col-md-4" >
+                                        <label class='form-lable'>First Name</label>
+                                        <span class='fbutton'> *</span>
+                                        <input
+                                            type="text" id="" [(ngModel)]="personal.first_name"
+                                            placeholder='Enter First Name'#first_name="ngModel" required
+                                             name='first_name'
+                                            class='form-control'>
+                                        <div class="input-container">
+                                            <i class="fa fa-user icon3"></i>
+                                        </div>
+                                        <div class="input-container">
+                                        <fa-icon [icon]="userIcon" class="icon3"></fa-icon>
+                                    </div>
+                                        <span class="text-danger" *ngIf="this.submit&&first_name.errors?.['required']" >
+                                            Name is required.
+                                         </span>
+                                    </div>
+                                
+
+                                <div class="col-md-4" >
+                                    <label class='form-lable'>Middle Name</label>
+                                    <input
+                                        type="text"
+                                        placeholder='Enter Middle Name'
+                                        name='middle_name'
+                                        class='form-control'>
+                                        <div class="input-container">
+                                            <fa-icon [icon]="userIcon" class="icon3"></fa-icon>
+                                        </div>
+                                </div>
+                           
+                                <div class="col-md-4" >
+                                    <label class='form-lable'>Last Name</label>
+                                    <span class='fbutton'> *</span>
+                                    <input
+                                        type="text" id='last_name'
+                                        placeholder='Enter Last Name'
+                                        name='last_name'
+                                        class='form-control'
+                                        >
+                                        <div class="input-container">
+                                            <fa-icon [icon]="userIcon" class="icon3"></fa-icon>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-4" >
+                                    <label class='form-lable'>Date Of Birth</label>
+                                    <span class='fbutton'> *</span>
+                                <input name="DOB" class="form-control"   
+                                    placeholder="Enter Your Date of Birth" 
+                                    bsDatepicker 
+                                    dateFormat="dd-MM-yyyy"
+                                    min="minDate"
+                                    max="maxDate"
+                                    [(ngModel)]="personal.age"
+                                    />  
+                                    <div class="input-container">
+                                        <fa-icon [icon]="dateIcon" class="icon3"></fa-icon>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
+                                <label class='form-lable'>Age</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="number" id='age' disabled
+                                                    name='age'
+                                                    class='form-control'
+                                                    
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Gender</label>
+                                                <span class='fbutton'> *</span><br>
+                                                <div class='form-lable d-flex' >
+                                                    <div class='form-lable' >
+                                                        <input type="radio" value="Male" name='gender' id="gender"
+                                                         />Male
+                                                    </div>
+                                                    <div class='form-lable'>
+                                                        <input type="radio" value="Female" name='gender' id="gender"
+                                                        />Female
+                                                    </div>
+                                                    <div class='form-lable'>
+                                                        <input type="radio" value="Other" name='gender' id="gender"
+                                                        />Other
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Email</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="text" id='email' disabled
+                                                    placeholder='Enter Email'
+                                                    name='email'
+                                                    class='form-control'
+                                                    >
+                                                    <div class="input-container">
+                                                        <fa-icon [icon]="emailIcon" class="icon3"></fa-icon>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Mobile Number</label>
+                                                <span class='fbutton'> *</span>
+                                                <div class='img1'>
+                                                </div>
+                                                <input
+                                                    type="text" maxLength='10' id='mobile_no'
+                                                    placeholder='Enter Mobile Number'
+                                                    name='mobile_no'
+                                                    class='form-control'>
+                                                <div class="input-container">
+                                                    <fa-icon [icon]="mobileIcon" class="icon3"></fa-icon>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Address</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="text" id='address'
+                                                    placeholder='Enter Address'
+                                                    name='address'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+                                            
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Pin Code</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="text" id='pincode' maxLength='6'
+                                                    placeholder='Enter Pin code'
+                                                    name='pincode'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Alternate Number</label>
+                                                <input
+                                                    type="text" maxLength='10' id='alternate_no'
+                                                    placeholder='Enter Alternate Number'
+                                                    name='alternate_no'
+                                                    class='form-control'
+                                                    >
+                                                    <div class="input-container">
+                                                        <fa-icon [icon]="mobileIcon" class="icon3"></fa-icon>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Emergency Number</label>
+                                                <input
+                                                    type="text" maxLength='10' id='emergency_no'
+                                                    placeholder='Enter Emergency Number'
+                                                    name='emergency_no'
+                                                    class='form-control'
+                                                    >
+                                                    <div class="input-container">
+                                                        <fa-icon [icon]="mobileIcon" class="icon3"></fa-icon>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Blood Group</label>
+                                                <select id='blood_group'
+                                                    name='blood_group'
+                                                    class='form-control'
+                                                    >
+                                                    <option value="" selected="selected">Select Blood Group</option>
+                                                    <option value="A+">A+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="AB-">AB-</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="O-">O-</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Passport Number</label>
+                                                <input
+                                                    type="text" maxLength='8' id='passport_no'
+                                                    placeholder='Enter Passport Number'
+                                                    name='passport_no'
+                                                    class='form-control'>
+                                            </div>
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Passport copy</label>
+                                                <input
+                                                    type="file"
+                                                    name='passport_copy'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Aadhar Number</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="text" maxLength='14' id='aadhar_no'
+                                                    placeholder='Enter Aadhar Number'
+                                                    name='aadhar_no'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Aadhar Copy</label>
+                                                <input
+                                                    type="file"
+                                                    name='aadhar_copy'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Driving License</label>
+                                                <input
+                                                    type="text" id='driving_license'
+                                                    placeholder='Enter Driving License'
+                                                    name='driving_license'
+                                                    class='form-control'
+                                                   >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Driving License Copy</label>
+                                                <input
+                                                    type="file"
+                                                    placeholder='driving_license_copy'
+                                                    name='driving_license_copy'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class='form-lable'>Previous Emp Id</label>
+                                                <input
+                                                    type="text" id='previous_emp_id'
+                                                    placeholder='Enter Previous Emp Id'
+                                                    name='previous_emp_id'
+                                                    class='form-control'
+                                                    >
+                                                </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Previous Company Name</label>
+                                                <input
+                                                    type="text" id='previous_employer_details'
+                                                    placeholder='Enter Previous Company Name'
+                                                    name='previous_employer_details'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Work Location</label>
+                                                <input
+                                                    type="text" id='work_location'
+                                                    placeholder='Enter Work Location'
+                                                    name='work_location'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Marital Status</label>
+                                                <span class='fbutton'> *</span>
+                                                <select id='marital_status'
+                                                    name='marital_status'
+                                                    class='form-control'
+                                                    >
+                                                    <option value="" selected="selected">Select Marital Status</option>
+                                                    <option value="Single">Single</option>
+                                                    <option value="Married">Married</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Github Id</label>
+                                                <input
+                                                    type="text" id='github_id'
+                                                    placeholder='Enter Github Id'
+                                                    name='github_id'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Social Media</label>
+                                                <input
+                                                    type="text" id='social_media'
+                                                    placeholder='Enter Social Media'
+                                                    name='social_media'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Physically Challenge</label>
+                                                <input
+                                                    type="text" id='physically_challenge'
+                                                    placeholder='Enter Physically Challenge'
+                                                    name='physically_challenge'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+
+                                            <div class="col-md-4" >
+                                                <label class='form-lable'>Identification Marks</label>
+                                                <span class='fbutton'> *</span>
+                                                <input
+                                                    type="text" id='identification_marks'
+                                                    placeholder='Enter Identification Marks'
+                                                    name='identification_marks'
+                                                    class='form-control'
+                                                    >
+                                            </div>
+                                        </div>
+                            </form>
+                            <br>
+                            <div class="form-group">
+                                <div  class="text-center" *ngIf="this.loading">
+                                  <div class="spinner-border text-primary " role="status">
+                                  </div>
+                                </div>
+                                <br>
+                                <input type="submit" class="btn btn-success"  value="Save" style="margin-left: 1100px;" (click)="submit=true" [disabled]="this.loading"  >
+                             </div>
+                        </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
